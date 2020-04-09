@@ -9,12 +9,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
 
     //same for everyone
+
+    //how to run test in parallel ? INTERVIEW
+   //make your driver thread local
+   //make getDriver() method synchronized
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
     //so no one can create object of Driver class
     //everyone should call static getter method instead
     private Driver() {
     }
+
+    /**
+     *  synchornized makes method thread safe. It ensures that
+     * @return
+     */
 
     public synchronized static WebDriver getDriver() {
         //if webdriver object doesn't exist
